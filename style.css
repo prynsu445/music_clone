@@ -27,7 +27,7 @@ body{
 }
 .left{
     width:25vw;
-    padding:20px;
+    padding:5px;
 }
 
 .left ul {
@@ -47,7 +47,7 @@ body{
     align-items:center;
     list-style:none;
     gap:15px;
-
+    padding-top:14px;
 }
 
 .home ul li:hover {
@@ -90,6 +90,24 @@ gap:5px;
         0 0 10px #ff0000,
         0 0 20px #ff1a1a,
         0 0 40px rgba(255, 0, 0, 0.4);
-     
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
