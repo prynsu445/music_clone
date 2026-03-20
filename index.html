@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,10 @@
 
     <!-- Link External CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+
 </head>
+
 <body>
 
     <!-- SIDEBAR -->
@@ -53,24 +57,61 @@
     </aside>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content">
-        <div class="right border">
-             <div class="header">
-                <div class="nav">
-                    <img src="left.svg" alt="left1">
-                    <img src="right.svg" alt="right1">
+<main class="main-content">
 
-                </div>
-                <div class="button">
-                <div class="button">
-                        <button>Sign up</button>
-                        <button>Login</button>
-                        
-                   </div>
-                    </div>
+    <div class="content-box">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="nav">
+                <img src="left.svg">
+                <img src="right.svg">
+            </div>
+
+            <div class="buttons">
+                <button class="signup">Sign up</button>
+                <button class="login">Log in</button>
+            </div>
         </div>
+
+        <!-- BODY -->
+ <div class="spotify_playlist">
+    <h1>Spotify Playlists</h1>
+
+    <div class="cardContainer">   <!-- ONE container -->
+
+        <div class="card">
+            <img src="img1.jpg" alt="">
+            <h2>Happy Hits!</h2>
+            <p>Hits to boost your mood and fill you with happiness!</p>
         </div>
-    </main>
+
+        <div class="card">
+            <img src="img2.jpg" alt="">
+            <h2>Calming Acoustic</h2>
+            <p>keep calm instrumental acoustic.</p>
+        </div>
+
+        <div class="card">
+            <img src="img3.jpg" alt="">
+            <h2>Lofi Chill</h2>
+            <p>Lazyu slow lofi beats for laid-back moments.</p>
+        </div>
+
+        <div class="card">
+            <img src="img4.jpg" alt="">
+            <h2>Lounge-Soft House</h2>
+            <p>Soft house music for your laidback moments.</p>
+        </div>
+
+    </div>   <!-- close ONE container -->
+</div>
+
+
+        </div>
+    </div>
+</main>
 
 </body>
+
 </html>
