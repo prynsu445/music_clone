@@ -2,9 +2,13 @@
     display: flex;
     gap: 18px;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 10px;
     margin: 30px;
+    overflow-x: auto;
+    scrollbar-width: none; 
+    overflow-y:scroll;   /* Scroll down-up but not need */
+    max-height:80vh;
 }
 
 .card {
@@ -14,13 +18,15 @@
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
 }
 
 .card img {
     width: 136px;
-    height: 136px;   /* 160 - 24px padding = 136px (square) */
+    height: 136px;   
     object-fit: cover;
     border-radius: 6px;
+    display: block;
 }
 
 .card h2 {
@@ -38,4 +44,194 @@
 .card:hover {
     background: #282828;
     transform: translateY(-3px);
+}
+.play-btn1 {
+    position: absolute;
+    bottom: 75px;        /* seat above the text */
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    background-color: #e0152b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.play-btn1 img {
+    width: 22px;
+    height: 22px;
+    border-radius: 0;   /* override card img border-radius */
+    object-fit: unset;
+}
+
+/* Show on card hover */
+.card:hover .play-btn1 {
+    opacity: 1;
+    transform: translateY(0);   
+}
+
+.play-btn1:hover {
+    transform: scale(1.08);     
+    background-color: #ff1f35;
+}
+
+.cardContainer::-webkit-scrollbar {
+    display: none;            /* hide scrollbar Chrome */
+}
+
+.playbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #181818;
+    border-top: 1px solid #282828;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 100;
+}
+
+/* Left — song info */
+.playbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 250px;
+}
+
+.playbar-left img {
+    width: 52px;
+    height: 52px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.playbar-song h4 {
+    font-size: 13px;
+    color: white;
+    margin: 0;
+}
+
+.playbar-song p {
+    font-size: 11px;
+    color: #b3b3b3;
+    margin: 4px 0 0;
+}
+
+/* Center — controls */
+.playbar-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.playbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.playbar-controls button {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.playbar-controls button:hover {
+    color: white;
+}
+
+.playbar-controls .btn-play {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.playbar-controls .btn-play:hover {
+    transform: scale(1.08);
+    background: #e0152b;
+    color: white;
+}
+
+/* Progress bar */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 400px;
+}
+
+.progress-bar span {
+    font-size: 11px;
+    color: #b3b3b3;
+    min-width: 35px;
+}
+
+.progress-bar input[type="range"] {
+    flex: 1;
+    height: 4px;
+    accent-color: #e0152b;
+    cursor: pointer;
+}
+
+/* Right — volume */
+.playbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    justify-content: flex-end;
+}
+
+.playbar-right span {
+    font-size: 18px;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+.playbar-right span:hover {
+    color: white;
+}
+
+.playbar-right input[type="range"] {
+    width: 90px;
+    height: 4px;
+    accent-color: #e0152b;
+    cursor: pointer;
+}
+
+
+
+.playbar-controls img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+    filter: invert(0);   /* makes dark SVGs white */
+}
+
+.playbar-controls img:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
