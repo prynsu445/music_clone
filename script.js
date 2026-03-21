@@ -3,19 +3,41 @@
 // ============================================================
 
 // ─── SONGS ───────────────────────────────────────────────────
-const songs = [
-    "song_h/aicanvas-kakano-flower-te-reo-maori-238656.mp3",
-    "song_h/geoffharvey-fat-cat-374614.mp3",
-    "song_h/grand_project-deep-epic-cinematic-when-time-collapses_short-1-501529.mp3",
-    "song_h/jean-paul-v-la-marchande-de-cigarettes-tango-pop-279955.mp3",
-    "song_h/mfcc-hero-marvel-superhero-music-354045.mp3",
-    "song_h/mondamusic-lofi-beats-499181.mp3",
-    "song_h/welc0mei0-200330-sad-japan-piano-flower-spring-155539.mp3"
-];
 
+let songs = [];
 let currentIndex = 0;
-let audio = new Audio(songs[currentIndex]);
+let audio = new Audio();
 let isPlaying = false;
+
+
+// dynamically read songs from folder
+async function loadSongs(){
+    console.log("load")
+    let res = await fetch("http://127.0.0.1:5500/song_h/");
+
+    let text = await res.text();
+
+    let div = document.createElement("div");
+    div.innerHTML = text;
+
+    let links = div.getElementsByTagName("a");
+
+    for(let link of links){
+
+        if(link.href.endsWith(".mp3")){
+
+            songs.push(link.getAttribute("href"));
+
+        }
+
+    }
+
+    // initialise first song
+    audio = new Audio(songs[currentIndex]);
+
+}
+
+loadSongs();
 
 // ─── PLAYBAR ELEMENTS ────────────────────────────────────────
 const playBtn       = document.querySelector(".btn-play");
