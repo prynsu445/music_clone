@@ -140,20 +140,6 @@
     align-items: center;
     gap: 20px;
 }
-
-.playbar-controls button {
-    background: none;
-    border: none;
-    color: #b3b3b3;
-    font-size: 18px;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.playbar-controls button:hover {
-    color: white;
-}
-
 .playbar-controls .btn-play {
     width: 36px;
     height: 36px;

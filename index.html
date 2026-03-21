@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HellFire Clubs</title>
     <link rel="icon" type="image/svg+xml" href="hellfire.svg">
-
-    <!-- Link External CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
-
 </head>
 
 <body>
@@ -22,6 +19,7 @@
         <div class="nav-card">
             <div class="logo-wrap">
                 <img src="hellfire3.svg" alt="HellFire Logo">
+                <h2 class="logo-text">HellFire Club</h2>
             </div>
 
             <ul class="nav-list">
@@ -42,6 +40,65 @@
                 <img src="library.svg" alt="Library">
                 <h2>Your Library</h2>
             </div>
+
+            <ul class="library-list">
+                <li class="lib-item active" data-index="0">
+                    <img src="img1.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Happy Hits!</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+                <li class="lib-item" data-index="1">
+                    <img src="img2.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Calming Acoustic</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+                <li class="lib-item" data-index="2">
+                    <img src="img3.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Super Heroes</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+                <li class="lib-item" data-index="3">
+                    <img src="img4.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Lounge-Soft House</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+                <li class="lib-item" data-index="4">
+                    <img src="img5.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Lofi Chill</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+                <li class="lib-item" data-index="5">
+                    <img src="img6.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Viral Hits</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+                <li class="lib-item" data-index="6">
+                    <img src="img7.jpg" alt="">
+                    <div class="lib-info">
+                        <span class="lib-title">Rock Lassics</span>
+                        <span class="lib-sub">Playlist</span>
+                    </div>
+                    <div class="lib-equalizer"><span></span><span></span><span></span></div>
+                </li>
+            </ul>
         </div>
 
         <!-- Footer -->
@@ -58,7 +115,6 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-
         <div class="content-box">
 
             <!-- TOP BAR -->
@@ -67,7 +123,6 @@
                     <img src="left.svg">
                     <img src="right.svg">
                 </div>
-
                 <div class="buttons">
                     <button class="signup">Sign up</button>
                     <button class="login">Log in</button>
@@ -78,109 +133,177 @@
             <div class="spotify_playlist">
                 <h1>HellFire's Club Playlists</h1>
 
-                <div class="cardContainer"> <!-- ONE container -->
+                <!-- SEARCH BAR -->
+                <div class="spotify-search-bar" id="spotifySearchBar" style="display:none;">
+                    <div class="spotify-search-wrap">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="white" stroke-width="2"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="What do you want to play?" autocomplete="off">
+                        <button class="search-clear" id="searchClear">✕</button>
+                    </div>
+                </div>
 
-                    <div class="card">
-                        <img src="img1.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
+                <!-- GENRE CATEGORIES -->
+                <div class="genre-section" id="genreSection" style="display:none;">
+                    <h2 class="genre-title">Browse Categories</h2>
+                    <div class="genre-grid">
+                        <div class="genre-tile" data-index="0" style="background: linear-gradient(135deg, #b91c1c, #7f1d1d);">
+                            <span class="genre-emoji">😄</span>
+                            <span class="genre-label">Happy Hits</span>
                         </div>
+                        <div class="genre-tile" data-index="1" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);">
+                            <span class="genre-emoji">🎸</span>
+                            <span class="genre-label">Calming Acoustic</span>
+                        </div>
+                        <div class="genre-tile" data-index="2" style="background: linear-gradient(135deg, #7e22ce, #4c1d95);">
+                            <span class="genre-emoji">🦸</span>
+                            <span class="genre-label">Super Heroes</span>
+                        </div>
+                        <div class="genre-tile" data-index="3" style="background: linear-gradient(135deg, #b45309, #78350f);">
+                            <span class="genre-emoji">🍹</span>
+                            <span class="genre-label">Lounge-Soft House</span>
+                        </div>
+                        <div class="genre-tile" data-index="4" style="background: linear-gradient(135deg, #0f766e, #134e4a);">
+                            <span class="genre-emoji">🎧</span>
+                            <span class="genre-label">Lofi Chill</span>
+                        </div>
+                        <div class="genre-tile" data-index="5" style="background: linear-gradient(135deg, #be185d, #831843);">
+                            <span class="genre-emoji">🔥</span>
+                            <span class="genre-label">Viral Hits</span>
+                        </div>
+                        <div class="genre-tile" data-index="6" style="background: linear-gradient(135deg, #374151, #111827);">
+                            <span class="genre-emoji">🎵</span>
+                            <span class="genre-label">Rock Lassics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAYLIST CARDS -->
+                <div class="cardContainer">
+                    <div class="card" data-song="song_h/aicanvas-kakano-flower-te-reo-maori-238656.mp3">
+                        <img src="img1.jpg" alt="">
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Happy Hits!</h2>
                         <p>Hits to boost your mood and fill you with happiness!</p>
                     </div>
-
-                    <div class="card">
+                    <div class="card" data-song="song_h/geoffharvey-fat-cat-374614.mp3">
                         <img src="img2.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
-                        </div>
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Calming Acoustic</h2>
                         <p>keep calm instrumental acoustic.</p>
                     </div>
-
-                    <div class="card">
+                    <div class="card" data-song="song_h/grand_project-deep-epic-cinematic-when-.mp3">
                         <img src="img3.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
-                        </div>
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Super Heroes</h2>
                         <p>Marvel tracks—from the Studios Fanfare to Endgame—are unforgettable.</p>
                     </div>
-
-                    <div class="card">
+                    <div class="card" data-song="song_h/jean-paul-v-la-marchande-de-cigarettes-t.mp3">
                         <img src="img4.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
-                        </div>
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Lounge-Soft House</h2>
                         <p>Soft house music for your laidback moments.</p>
                     </div>
-
-                    <div class="card">
+                    <div class="card" data-song="song_h/mfcc-hero-marvel-superhero-music-3540.mp3">
                         <img src="img5.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
-                        </div>
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Lofi Chill</h2>
                         <p>Lazyu slow lofi beats for laid-back moments.</p>
                     </div>
-
-                    <div class="card">
+                    <div class="card" data-song="song_h/mondamusic-lofi-beats-499181.mp3">
                         <img src="img6.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
-                        </div>
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Viral Hits</h2>
-                        <p>Viral,trending and taking off.</p>
+                        <p>Viral, trending and taking off.</p>
                     </div>
-
-                    <div class="card">
+                    <div class="card" data-song="song_h/welc0mei0-200330-sad-japan-piano-flowe.mp3">
                         <img src="img7.jpg" alt="">
-                        <div class="play-btn1">
-                            <img src="play1.svg" alt="play">
-                        </div>
+                        <div class="play-btn1"><img src="play1.svg" alt="play"></div>
                         <h2>Rock Lassics</h2>
                         <p>Rock legends & songs that continue.</p>
                     </div>
-                </div> <!-- close ONE container -->
+                </div>
 
+                <!-- PLAYBAR -->
+                <div class="playbar">
+                    <div class="playbar-left">
+                        <img src="img1.jpg" alt="cover">
+                        <div class="playbar-song">
+                            <h4>Happy Hits!</h4>
+                            <p>Various Artists</p>
+                        </div>
+                    </div>
+                    <div class="playbar-center">
+                        <div class="playbar-controls">
+                            <img src="left2.svg" alt="">
+                            <button class="btn-play">▶</button>
+                            <img src="right2.svg" alt="">
+                        </div>
+                        <div class="progress-bar">
+                            <span>0:00</span>
+                            <input type="range" min="0" max="100" value="0">
+                            <span>0:00</span>
+                        </div>
+                    </div>
+                    <div class="playbar-right">
+                        <span><img src="volume1.svg" alt=""></span>
+                        <input type="range" min="0" max="100" value="70">
+                    </div>
+                </div>
 
-   <div class="playbar">
-
-    <!-- Left: Song Info -->
-    <div class="playbar-left">
-        <img src="img1.jpg" alt="cover">
-        <div class="playbar-song">
-            <h4>Happy Hits!</h4>
-            <p>Various Artists</p>
-        </div>
-    </div>
-
-    <!-- Center: Controls + Progress -->
-    <div class="playbar-center">
-        <div class="playbar-controls">
-             <img src="left2.svg" alt="">
-            <button class="btn-play">▶</button>
-             <img src="right2.svg" alt="">
-        </div>
-        <div class="progress-bar">
-            <span>0:00</span>
-            <input type="range" min="0" max="100" value="30">
-            <span>3:29</span>
-        </div>
-    </div>
-
-    <!-- Right: Volume -->
-    <div class="playbar-right">
-        <span><img src="volume1.svg" alt=""></span>
-        <input type="range" min="0" max="100" value="70">
-    </div>
-
-</div>
             </div>
         </div>
-        </div>
     </main>
+
+    <!-- SIGNUP MODAL -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-box">
+            <div class="modal-cat-bg" style="background-image: url('my_desktop_wallpaper____.jpg')"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="closeSignup">✕</button>
+                <h2 class="modal-title">Create Account</h2>
+                <p class="modal-sub">Join HellFire Club for free</p>
+                <div class="modal-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com">
+                </div>
+                <div class="modal-field">
+                    <label>Username</label>
+                    <input type="text" placeholder="Your name">
+                </div>
+                <div class="modal-field">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <button class="modal-btn">Sign Up Free</button>
+                <p class="modal-switch">Already have an account? <span id="goLogin">Log in</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <div class="modal-cat-bg" style="background-image: url('gatoca_.jpg')"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="closeLogin">✕</button>
+                <h2 class="modal-title">Log in</h2>
+                <p class="modal-sub">Welcome back to HellFire Club</p>
+                <div class="modal-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com">
+                </div>
+                <div class="modal-field">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <button class="modal-btn">Log In</button>
+                <p class="modal-switch">Don't have an account? <span id="goSignup">Sign up</span></p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
