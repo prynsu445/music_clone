@@ -1,8 +1,4 @@
-// ============================================================
-//  HellFire Club — script.js  (clean merged version)
-// ============================================================
 
-// ─── SONGS ───────────────────────────────────────────────────
 
 let songs = [];
 let currentIndex = 0;
@@ -39,7 +35,7 @@ async function loadSongs(){
 
 loadSongs();
 
-// ─── PLAYBAR ELEMENTS ────────────────────────────────────────
+// ─── PLAYBAR ELEMENTS 
 const playBtn       = document.querySelector(".btn-play");
 const progressBar   = document.querySelector(".progress-bar input");
 const currentTimeEl = document.querySelector(".progress-bar span:first-child");
@@ -47,7 +43,7 @@ const totalTimeEl   = document.querySelector(".progress-bar span:last-child");
 const playbarImg    = document.querySelector(".playbar-left img");
 const playbarTitle  = document.querySelector(".playbar-song h4");
 
-// ─── NAV / UI ELEMENTS ───────────────────────────────────────
+// ─── NAV / UI ELEMENTS 
 const homeBtn        = document.querySelector(".nav-list li:nth-child(1)");
 const searchBtn      = document.querySelector(".nav-list li:nth-child(2)");
 const spotifySearchBar = document.getElementById("spotifySearchBar");
@@ -62,7 +58,7 @@ const libItems       = document.querySelectorAll(".lib-item");
 let homeOpen   = false;
 let searchOpen = false;
 
-// ─── HELPERS ─────────────────────────────────────────────────
+// ─── HELPERSSSSSS
 function formatTime(sec) {
     if (isNaN(sec)) return "0:00";
     const m = Math.floor(sec / 60);
@@ -88,7 +84,7 @@ function updateLibraryHighlight() {
     });
 }
 
-// ─── CHANGE SONG ─────────────────────────────────────────────
+// ─── changes song 
 function changeSong() {
     audio.pause();
     audio = new Audio(songs[currentIndex]);
@@ -110,7 +106,7 @@ function changeSong() {
     updateLibraryHighlight();
 }
 
-// ─── CARD CLICKS ─────────────────────────────────────────────
+// ─── CARD CLICKS 
 allCards.forEach((card, index) => {
     card.addEventListener("click", () => {
         currentIndex = index;
@@ -118,7 +114,7 @@ allCards.forEach((card, index) => {
     });
 });
 
-// ─── PLAY / PAUSE ────────────────────────────────────────────
+// ─── play OR pause...
 playBtn.addEventListener("click", () => {
     if (isPlaying) {
         audio.pause();
@@ -132,7 +128,7 @@ playBtn.addEventListener("click", () => {
     updateLibraryHighlight();
 });
 
-// ─── NEXT / PREV ─────────────────────────────────────────────
+// next or back play song
 document.querySelector(".playbar-controls img:last-child").addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % songs.length;
     changeSong();
@@ -143,7 +139,7 @@ document.querySelector(".playbar-controls img:first-child").addEventListener("cl
     changeSong();
 });
 
-// ─── PROGRESS & VOLUME ───────────────────────────────────────
+// ─── volume PLAY UP/DOWN
 audio.addEventListener("timeupdate", updateProgress);
 
 progressBar.addEventListener("input", () => {
@@ -154,7 +150,7 @@ document.querySelector(".playbar-right input").addEventListener("input", (e) => 
     audio.volume = e.target.value / 100;
 });
 
-// ─── LIBRARY SIDEBAR ─────────────────────────────────────────
+// ─── LIBRARY SIDEBAR.....
 libItems.forEach((item) => {
     item.addEventListener("click", () => {
         currentIndex = parseInt(item.dataset.index);
@@ -164,7 +160,7 @@ libItems.forEach((item) => {
 
 updateLibraryHighlight(); // highlight on page load
 
-// ─── HOME TOGGLE ─────────────────────────────────────────────
+// ─── HOME TOGGLE 
 homeBtn.addEventListener("click", () => {
     if (homeOpen) {
         // Close → back to normal
@@ -192,7 +188,7 @@ homeBtn.addEventListener("click", () => {
     }
 });
 
-// ─── SEARCH TOGGLE ───────────────────────────────────────────
+// ─── SEARCH TOGGLE 
 searchBtn.addEventListener("click", () => {
     if (searchOpen) {
         // Close → back to normal
@@ -222,7 +218,7 @@ searchBtn.addEventListener("click", () => {
     }
 });
 
-// ─── SEARCH FILTER ───────────────────────────────────────────
+// ─── SEARCH FILTER 
 searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase().trim();
     searchClear.classList.toggle("visible", query.length > 0);
@@ -240,7 +236,7 @@ searchClear.addEventListener("click", () => {
     searchInput.focus();
 });
 
-// ─── GENRE TILES ─────────────────────────────────────────────
+// ─── GENRE TILES 
 document.querySelectorAll(".genre-tile").forEach(tile => {
     tile.addEventListener("click", () => {
         currentIndex = parseInt(tile.dataset.index);
@@ -258,7 +254,7 @@ document.querySelectorAll(".genre-tile").forEach(tile => {
     });
 });
 
-// === MODALS ===
+// MODALS 
 const signupModal = document.getElementById("signupModal");
 const loginModal  = document.getElementById("loginModal");
 

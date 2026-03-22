@@ -3,16 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ✅ THIS IS THE KEY FIX — forces real mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>HellFire Clubs</title>
     <link rel="icon" type="image/svg+xml" href="hellfire.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="responsive.css">
+     <link rel="stylesheet" href="Style-mobile-patch.css">
 </head>
 
 <body>
 
-    <!-- SIDEBAR -->
+    <!-- SIDEBAR (desktop only — hidden on mobile via CSS) -->
     <aside class="sidebar">
 
         <!-- Top Nav Card -->
@@ -306,6 +309,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="mobile.js"></script>
 </body>
 
 </html>

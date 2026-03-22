@@ -1,0 +1,29 @@
+
+
+/* FIX 1: body overflow:hidden blocks mobile scroll */
+body {
+    overflow: hidden auto; /* allow vertical scroll on mobile */
+}
+
+/* FIX 2: main content must not overflow horizontally */
+.main-content {
+    overflow-x: hidden;
+}
+
+/* FIX 3: spotify_playlist needs proper scroll on mobile */
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;  /* re-lock body */
+    }
+
+    .main-content {
+        overflow: hidden;
+        height: 100dvh; /* dynamic viewport height — fixes iOS address bar issue */
+    }
+
+    .spotify_playlist {
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

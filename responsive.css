@@ -1,0 +1,277 @@
+/* ============================================================
+   HellFire Club — responsive.css
+   Add this AFTER style.css in your HTML:
+   <link rel="stylesheet" href="responsive.css">
+   ============================================================ */
+
+/* ── MOBILE-ONLY ELEMENTS: hidden on desktop by default ── */
+.mobile-bottom-nav,
+.mobile-library-drawer {
+    display: none !important;
+}
+
+/* ── CONTENT BOX ── */
+.content-box {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.spotify_playlist {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 90px; /* space for fixed playbar */
+}
+
+/* ============================================================
+   TABLET  (max 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+
+    :root { --sidebar-width: 200px; }
+
+    .progress-bar { width: 280px; }
+
+    .cardContainer { margin: 16px; }
+}
+
+/* ============================================================
+   MOBILE  (max 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* ── HIDE DESKTOP SIDEBAR ── */
+    .sidebar {
+        display: none;
+    }
+
+    /* ── FULL-WIDTH MAIN ── */
+    .main-content {
+        margin-left: 0;
+        width: 100vw;
+        padding: 0;
+        height: 100vh;
+        display: flex !important; /* override desktop hidden */
+        flex-direction: column;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+        border-radius: 0;
+        padding: 10px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+    .nav img { width: 22px; }
+    .signup  { font-size: 13px; }
+    .login   { padding: 7px 14px; font-size: 13px; }
+
+    /* ── PLAYLIST BODY ── */
+    .spotify_playlist {
+        padding: 12px 0 160px; /* extra bottom for playbar + bottom nav */
+    }
+    .spotify_playlist h1 {
+        font-size: 20px;
+        padding: 0 16px;
+        margin-bottom: 12px;
+    }
+
+    /* ── SEARCH BAR ── */
+    .spotify-search-bar { padding: 10px 16px 0; }
+    .spotify-search-wrap {
+        max-width: 100%;
+        height: 44px;
+    }
+
+    /* ── GENRE SECTION ── */
+    .genre-section { padding: 10px 16px 24px; }
+    .genre-title   { font-size: 18px; margin-bottom: 14px; }
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .genre-tile { height: 90px; padding: 14px 12px 12px; }
+    .genre-emoji { font-size: 22px; }
+    .genre-label { font-size: 12px; }
+
+    /* ── CARDS ── */
+    .cardContainer {
+        gap: 12px;
+        padding: 8px 16px;
+        margin: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .card {
+        width: 140px;
+        padding: 10px;
+    }
+    .card img {
+        width: 120px;
+        height: 120px;
+    }
+    .card h2 { font-size: 13px; }
+    .card p  { font-size: 11px; }
+    .play-btn1 {
+        bottom: 68px;
+        right: 14px;
+        width: 36px;
+        height: 36px;
+    }
+    .play-btn1 img { width: 18px; height: 18px; }
+
+    /* ── PLAYBAR (mobile stacked) ── */
+    .playbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 16px 8px;
+        gap: 6px;
+        /* sits just above the bottom nav */
+        bottom: 64px;
+    }
+
+    .playbar-left {
+        width: 100%;
+        gap: 10px;
+    }
+    .playbar-left img {
+        width: 44px;
+        height: 44px;
+    }
+    .playbar-song h4 { font-size: 12px; }
+    .playbar-song p  { font-size: 10px; }
+
+    .playbar-center {
+        width: 100%;
+        gap: 6px;
+    }
+    .playbar-controls { gap: 18px; }
+    .playbar-controls .btn-play {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    .playbar-controls img { width: 18px; height: 18px; }
+
+    .progress-bar {
+        width: 100%;
+        gap: 8px;
+    }
+    .progress-bar span { font-size: 10px; min-width: 28px; }
+
+    /* Hide volume on mobile (replaced by system volume) */
+    .playbar-right { display: none; }
+
+    /* ── BOTTOM NAV BAR (mobile only) ── */
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background: #121212;
+        border-top: 1px solid #282828;
+        display: flex !important; /* override desktop hidden */
+        align-items: center;
+        justify-content: space-around;
+        z-index: 200;
+        padding: 0 8px;
+    }
+    .mobile-bottom-nav .mob-nav-item {
+        display: flex !important; /* override desktop hidden */
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 8px;
+        transition: background 0.2s;
+        flex: 1;
+    }
+    .mobile-bottom-nav .mob-nav-item:hover,
+    .mobile-bottom-nav .mob-nav-item.nav-active {
+        background: #282828;
+    }
+    .mobile-bottom-nav .mob-nav-item img {
+        width: 22px;
+        filter: invert(0.6);
+    }
+    .mobile-bottom-nav .mob-nav-item.nav-active img,
+    .mobile-bottom-nav .mob-nav-item:hover img {
+        filter: invert(1);
+    }
+    .mobile-bottom-nav .mob-nav-item span {
+        font-size: 10px;
+        font-weight: 600;
+        color: #b3b3b3;
+    }
+    .mobile-bottom-nav .mob-nav-item.nav-active span,
+    .mobile-bottom-nav .mob-nav-item:hover span {
+        color: white;
+    }
+
+    /* ── MOBILE LIBRARY DRAWER ── */
+    .mobile-library-drawer {
+        display: none;
+        position: fixed;
+        bottom: 64px;
+        left: 0;
+        right: 0;
+        max-height: 70vh;
+        background: #121212;
+        border-top: 2px solid #282828;
+        border-radius: 20px 20px 0 0;
+        z-index: 150;
+        overflow-y: auto;
+        padding: 16px 0 12px;
+        animation: slideUpDrawer 0.3s ease;
+    }
+    .mobile-library-drawer.open { display: block; }
+    @keyframes slideUpDrawer {
+        from { transform: translateY(100%); }
+        to   { transform: translateY(0); }
+    }
+    .mobile-library-drawer h3 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #b3b3b3;
+        padding: 0 20px 12px;
+        border-bottom: 1px solid #282828;
+        margin-bottom: 8px;
+    }
+    .mobile-library-drawer .lib-item {
+        padding: 10px 20px;
+    }
+    .mobile-library-drawer .lib-item img {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* ── MODALS ── */
+    .modal-box {
+        width: calc(100vw - 32px);
+        max-width: 360px;
+        margin: 0 16px;
+    }
+    .modal-content {
+        padding: 28px 20px 22px;
+    }
+    .modal-title { font-size: 20px; }
+}
+
+/* ============================================================
+   SMALL PHONES  (max 400px)
+   ============================================================ */
+@media (max-width: 400px) {
+
+    .card { width: 130px; }
+    .card img { width: 108px; height: 108px; }
+
+    .genre-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .genre-tile { height: 80px; }
+
+    .playbar { padding: 8px 12px 6px; }
+}
